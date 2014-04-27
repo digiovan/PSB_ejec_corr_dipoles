@@ -72,11 +72,17 @@ var_to_change['KICKER_VALUE'] = opts.KICKER_VALUE
 var_to_change['KICKER_STRENGTH'] = 'k' + var_to_change['KICKER_NAME'].replace(".","")
 
 ext = var_to_change['KICKER_STRENGTH'] + 'at' + var_to_change['KICKER_VALUE'].replace(".","p") + 'rad'
+ext2 = 'l2014'
 
-var_to_change['MATCH_ORBIT_FILENAME'] = outfolder + 'match_orbit_MUX4p172_MUY5p230_' +  ext + '.prt'
-var_to_change['OUTPUT_TWISS'] = outfolder + 'twiss/psb_orbit_' +  ext + '.twiss'
-var_to_change['OUTPUT_PLOT']  = outfolder +    'ps/psb_orbit_' +  ext  
-var_to_change['OUTPUT_GEOM']  = outfolder +  'geom/geom_rel_'  +  ext + '.txt'
+if ('2009' in var_to_change['SEQFILE']):
+    ext2 = 'l2009'
+if ('expfromnote' in var_to_change['SEQFILE']):
+    ext2 = 'lexpfromnote' # layout as expected from PS/OP/Note 99-xx, never published...
+
+var_to_change['MATCH_ORBIT_FILENAME'] = outfolder + 'match_orbit_MUX4p172_MUY5p230_' +  ext + '_' + ext2 + '.prt'
+var_to_change['OUTPUT_TWISS'] = outfolder + 'twiss/psb_orbit_' +  ext + '_' + ext2 + '.twiss'
+var_to_change['OUTPUT_PLOT']  = outfolder +    'ps/psb_orbit_' +  ext + '_' + ext2 
+var_to_change['OUTPUT_GEOM']  = outfolder +  'geom/geom_rel_'  +  ext + '_' + ext2 + '.txt'
                                                                                                                               
 # debug
 # for item in var_to_change.keys():
@@ -85,14 +91,14 @@ var_to_change['OUTPUT_GEOM']  = outfolder +  'geom/geom_rel_'  +  ext + '.txt'
 
 
 # modify the template script
-infile  = open('%s/psb_orbit_TEMPLATE.madx' % PWD)
+infile_name = ''
+if ('DHZ' in var_to_change['KICKER_NAME']):
+    infile_name = '%s/psb_orbit_DHZ_TEMPLATE.madx' % PWD
+if ('DVT' in var_to_change['KICKER_NAME']):
+    infile_name = '%s/psb_orbit_DVT_TEMPLATE.madx' % PWD
 
-ext2 = 'l2014'
+infile  = open('%s' % infile_name)
 
-if ('2009' in var_to_change['SEQFILE']):
-    ext2 = 'l2009'
-if ('expfromnote' in var_to_change['SEQFILE']):
-    ext2 = 'lexpfromnote' # layout as expected from PS/OP/Note 99-xx, never published...
 
 madx_filename = 'psb_orbit_%s_%s.madx' % (ext, ext2) 
 outfile = open('%s/%s' % (PWD, madx_filename), 'w')
@@ -109,7 +115,7 @@ for line in infile:
         # print item, var_to_change[item]
         newline = newline.replace( item, var_to_change[item] )
 
-    # print 'newline:  %s' % newline
+    # print 'newline:  %s' % newline      
     outfile.write(newline)
 
 infile.close()

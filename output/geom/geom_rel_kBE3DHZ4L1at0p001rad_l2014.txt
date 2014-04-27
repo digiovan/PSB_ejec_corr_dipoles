@@ -1,0 +1,5 @@
+! Optics function at the center of extraction septum BE3.SMH15L1
+xsept_start =         0.0001249740 ;
+pxsept_start =         0.0009522430 ;
+xsept_center =         0.0007248870 ;
+pxsept_center =         0.0009522430 ;

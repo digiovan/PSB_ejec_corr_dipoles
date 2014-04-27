@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 27.04.14 19.08.23 +
+  + Execution Time Stamp: 27.04.14 20.02.21 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -6256,7 +6256,7 @@ VARIABLE "TAR" SET TO   7.88860905e-28
 
 ! -----------------------------------------------------------------------------------------
 
-assign, echo="../output/match_orbit_MUX4p172_MUY5p230_kBE3DVT4L1at0p001rad.prt";
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_kBE3DVT4L1at0p001rad_l2009.prt";
 
 print, text="match_orbit for MUX=4.172, MUY=5.230";
 
@@ -6300,7 +6300,7 @@ disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
 
 select, flag=twiss, clear;
 
-select, flag=twiss, column=name, s,x,px; !alfx,alfy,betx,bety,mux,muy,disp;
+select, flag=twiss, column=name, s,y,py; !alfx,alfy,betx,bety,mux,muy,disp;
 
  
 
@@ -6310,7 +6310,7 @@ twiss !, centre
 
       , table=twiss
 
-      , file='../output/twiss/psb_orbit_kBE3DVT4L1at0p001rad.twiss';
+      , file='../output/twiss/psb_orbit_kBE3DVT4L1at0p001rad_l2009.twiss';
 
 enter Twiss module
 ++++++ info: Zero value of SIGT replaced by 1.
@@ -6351,9 +6351,9 @@ orbit:   9.411109E-08  1.017503E-08  2.177705E-03 -5.470203E-04  0.000000E+00  0
 
 
 
-PLOT, table=twiss, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+PLOT, table=twiss, VAXIS=Y,HAXIS=S, VMIN=-0.007,VMAX=0.007,
 
-      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/ps/psb_orbit_kBE3DVT4L1at0p001rad';
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/ps/psb_orbit_kBE3DVT4L1at0p001rad_l2009';
 
 ++++++ info: Zero value of SIGT replaced by 1.
 ++++++ info: Zero value of SIGE replaced by 1/1000.
@@ -6363,29 +6363,29 @@ PLOT, table=twiss, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
  plot number =            1
 
 
-XSEPT_START   := table(twiss,BE3.SMH15L1_START,x);
+YSEPT_START   := table(twiss,BE3.SMH15L1_START,y);
 
-PXSEPT_START  := table(twiss,BE3.SMH15L1_START,px);
+PYSEPT_START  := table(twiss,BE3.SMH15L1_START,py);
 
-XSEPT_CENTER  := table(twiss,BE3.SMH15L1,x);
+YSEPT_CENTER  := table(twiss,BE3.SMH15L1,y);
 
-PXSEPT_CENTER := table(twiss,BE3.SMH15L1,px);
-
-
+PYSEPT_CENTER := table(twiss,BE3.SMH15L1,py);
 
 
 
-assign, echo="../output/geom/geom_rel_kBE3DVT4L1at0p001rad.txt";
+
+
+assign, echo="../output/geom/geom_rel_kBE3DVT4L1at0p001rad_l2009.txt";
 
 print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 
-value,  XSEPT_START;
+value,  YSEPT_START;
 
-value,  PXSEPT_START;
+value,  PYSEPT_START;
 
-value,  XSEPT_CENTER;
+value,  YSEPT_CENTER;
 
-value,  PXSEPT_CENTER;
+value,  PYSEPT_CENTER;
 
 assign, echo=terminal;
 
@@ -6394,18 +6394,18 @@ assign, echo=terminal;
 print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 
 ! Optics function at the center of extraction septum BE3.SMH15L1
-value,  XSEPT_START;
+value,  YSEPT_START;
 
-xsept_start =         0.0000002137 ;
-value,  PXSEPT_START;
+ysept_start =        -0.0019522137 ;
+value,  PYSEPT_START;
 
-pxsept_start =        -0.0000000184 ;
-value,  XSEPT_CENTER;
+pysept_start =        -0.0001189372 ;
+value,  YSEPT_CENTER;
 
-xsept_center =         0.0000002021 ;
-value,  PXSEPT_CENTER;
+ysept_center =        -0.0020271441 ;
+value,  PYSEPT_CENTER;
 
-pxsept_center =        -0.0000000184 ;
+pysept_center =        -0.0001189372 ;
 
 
 
