@@ -1,0 +1,374 @@
+
+/******************************************************************************************
+ *
+ * PS BOOSTER. Directory: /afs/cern.ch/eng/ps/cps/Psb
+ * It consists of 16 identical periods, apart from the equipment
+ * in the straight sections.
+ * The BOOSTER has a radius of 25m and thus a circonference of 157.08m
+ *
+ * The injected beam from the linac have Ekin=50 MeV proton beam with p~300MeV/c.
+ * (311 MeV/c according to the report: http://accelconf.web.cern.ch/accelconf/p05/PAPERS/TPAT054.PDF)
+ * corresponding to E=0.988471 GeV and E0=0.938272 GeV. (The rest mass of a proton is 0.938272 GeV)
+ *
+ * The kinetic energy of the extracted beam is Ekin=1.4 GeV and p=2.141766 GeV/c [p=(SQRT(Ekin^2+2*E0*Ekin)/c]
+ * The beam is extracted to the PS. In the PS, it is injected in SS42.
+ *
+ *
+ * Revolution time at extraction:  T,revolution,ext = 572.79 ns (nano  seconds)
+ * Revolution time at injection:   T,revolution,inj =   1.6  us (micro seconds)
+ * The BOOSTER today has 2 bunches in each ring, i.e. 8 bunches in the PS.
+ * Injection time: C=275 ms, measure time C=290 ms
+ *
+ * Working points:
+ * Injection - high intensity          : QX=4.28,  QY=4.55
+ * Injection - low  intensity e.g. LHC : QX=4.28,  QY=4.45
+ * Extraction                          : QX=4.172, QY=4.23   = wp1
+ *
+ *
+ *
+ *
+ * The 2 MHz cavities are for the H0 mode, they are run around 8kV.
+ * They are run at the revolution frequency.
+ * The beam is below transition.
+ *
+ * The 4 MHz cavities are used to flatten the bunches.
+ * They reduce the peak current compared to the average currents.
+ * The 4 MHz cavities are run between 6-8 kV.
+ * They are run at twice the revolution frequency.
+ *
+ *
+ * All elements in the straight sections added.  21 Dec 2006 O.Berrig
+ * New working point: QX = 4.172 and QY = 4.23.  21 Dec 2006 O.Berrig
+ *
+ *
+ ******************************************************************************************
+ *
+ * This file is for protons at 0.348 GeV/c at time c = 301
+ *
+ *
+ * Execute with:  >madx_dev < psb_orbit.madx
+ *
+ ******************************************************************************************/
+
+
+
+ title, 'BOOSTER lattice @ 1.4 GeV';
+
+ option, echo;
+ option, RBARC=FALSE;
+
+
+
+/******************************************************************************************
+ * BOOSTER
+ ******************************************************************************************/
+! call, file = '../psb.ele';
+! call, file = '../psb.seq';
+! call, file = '../psb.dbx';
+! call, file = '../strength/psb_orbit.str';
+
+! use afs files
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.ele';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.seq';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.dbx';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/strength/psb_extraction.str';
+
+
+!save, sequence=psb3, file=psb3.save;
+
+
+
+/******************************************************************************************
+ * beam, use
+ ******************************************************************************************/
+beam, particle=PROTON, pc=2.14;  ! change depending on c-time of orbit measurement; pc=momentum
+use, sequence=psb3;
+
+set,  format="20.10f";
+
+
+/******************************************************************************************
+ * Match for very old working point, according to note PS/OP/Note 99-xx
+ ******************************************************************************************/
+
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_nocorr.prt";
+print, text="match_orbit for MUX=4.172, MUY=5.230";
+value,  kKF;
+value,  kKD;
+assign, echo=terminal;
+
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DHZ4L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ4L1=0.001 rad';
+
+
+! insert a kicker strength
+kBE3DHZ4L1 := 0.001; ! rad
+
+
+! REDO THE MATCHING
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DHZ4L1at1mrad.prt";
+print, text="match_orbit for MUX=4.172, MUY=5.230";
+value,  kKF;
+value,  kKD;
+assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,x,alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss ,centre
+      , DELTAP = PSHIFT
+      , table=TWISS_BE3DHZ4L1
+      , file='../output/psb_orbit_BE3DHZ4L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=TWISS_BE3DHZ4L1, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit';
+
+
+
+
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DHZ11L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ11L1=0.001 rad';
+
+! insert a kicker strength
+kBE3DHZ4L1 := 0.000; ! rad
+kBE3DHZ11L1 := 0.001; ! rad
+
+
+! REDO THE MATCHING
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DHZ11L1at1mrad.prt";
+print, text="match_orbit for MUX=4.172, MUY=5.230";
+value,  kKF;
+value,  kKD;
+assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta:=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,x,alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss ,centre
+      , DELTAP = PSHIFT
+      , table=TWISS_BE3DHZ11L1
+      , file='../output/psb_orbit_BE3DHZ11L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=TWISS_BE3DHZ11L1, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit';
+
+
+
+
+
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DVT4L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DVT4L1=0.001 rad';
+
+! insert a kicker strength
+kBE3DHZ4L1 := 0.000; ! rad
+kBE3DHZ11L1 := 0.000; ! rad
+kBE3DVT4L1 := 0.001; ! rad
+
+
+! REDO THE MATCHING
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DVT4L1at1mrad.prt";
+print, text="match_orbit for MUX=4.172, MUY=5.230";
+value,  kKF;
+value,  kKD;
+assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta:=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,x,alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss ,centre
+      , DELTAP = PSHIFT
+      , table=TWISS_BE3DVT4L1
+      , file='../output/psb_orbit_BE3DVT4L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=TWISS_BE3DVT4L1, VAXIS=Y,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit';
+
+
+
+
+
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DVT11L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DVT11L1=0.001 rad';
+
+! insert a kicker strength
+kBE3DHZ4L1 := 0.000; ! rad
+kBE3DHZ11L1 := 0.000; ! rad
+kBE3DVT4L1 := 0.000; ! rad
+kBE3DVT11L1 := 0.001; ! rad
+
+
+! REDO THE MATCHING
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DVT11L1at1mrad.prt";
+print, text="match_orbit for MUX=4.172, MUY=5.230";
+value,  kKF;
+value,  kKD;
+assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta:=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,x,alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss ,centre
+      , DELTAP = PSHIFT
+      , table=TWISS_BE3DVT11L1
+      , file='../output/psb_orbit_BE3DVT11L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=TWISS_BE3DVT11L1, VAXIS=Y,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit';
+
+
+
+
+/******************************************************************************************
+ * 
+ *    S T O P !!!
+ *
+ ******************************************************************************************\
+
+STOP;
+
+

@@ -1,0 +1,18 @@
+
+
+python createMadxFile.py -r 3 -f ../psb.seq -k DHZ4L1 -v 0.001   > CMD
+python createMadxFile.py -r 3 -f ../psb.seq -k DHZ11L1 -v 0.001 >> CMD
+python createMadxFile.py -r 3 -f ../psb.seq -k DVT4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb.seq -k DVT11L1 -v 0.001 >> CMD
+
+
+python createMadxFile.py -r 3 -f ../psb_2009.seq -k DHZ4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009.seq -k DHZ11L1 -v 0.001 >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009.seq -k DVT4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009.seq -k DVT11L1 -v 0.001 >> CMD
+
+python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DHZ4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DHZ11L1 -v 0.001 >> CMD
+python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DVT4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DVT11L1 -v 0.001 >> CMD
+

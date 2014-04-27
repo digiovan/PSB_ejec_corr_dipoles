@@ -1,0 +1,3 @@
+! Optics function at the center of extraction septum
+xsept =         0.0056386821 ;
+pxsept =         0.0000919369 ;

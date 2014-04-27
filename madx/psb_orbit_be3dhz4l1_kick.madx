@@ -1,0 +1,164 @@
+title, 'BOOSTER lattice @ 1.4 GeV';
+
+option, echo;
+option, RBARC=FALSE;
+
+
+
+/******************************************************************************************
+ * BOOSTER
+ ******************************************************************************************/
+! call, file = '../psb.ele';
+! call, file = '../psb.seq';
+! call, file = '../psb.dbx';
+! call, file = '../strength/psb_orbit.str';
+
+! use afs files
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.ele';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.seq';
+!call, file = '../psb_2009.seq';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.dbx';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/strength/psb_extraction.str';
+
+BE3.SMH15L1       : HKICKER, L := 0, AT = .909892-0.63;
+
+!BE3.SMH15L1_START : MARKER, L:=0;
+! suppress the warning to avoid warning about redefinition of the same elements
+option, -warn;
+P15TOPMID_WithMarker: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 15
+ BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
+ BE3.SMH15L1_START : HKICKER, L := 0, AT = .909892-0.63;
+ BE3.SMH15L1       : HKICKER, L := 0, AT = .909892;
+ BR3.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459532, ASSEMBLY_ID = 2452591;
+ BR3.DVT15L1         : DVT__002     , AT = 1.8213       , SLOT_ID = 2459533, ASSEMBLY_ID = 2452591;
+ BE3.BSW15L1         : MDBAB        , AT = 2.36666      , SLOT_ID = 2459538;
+ BR.BHZ151                          , AT = 3.462849     , SLOT_ID = 2459540;
+ BR.SPSCRAP151                      , AT = 4.2717       , SLOT_ID = 2459542, ASSEMBLY_ID = 2459540;
+ BR.QFO151                          , AT = 4.889797     , SLOT_ID = 2459543;
+ BR3.BPM15L3         : UES          , AT = 5.467834     , SLOT_ID = 2459555, ASSEMBLY_ID = 2452594;
+ BR3.ONOH0.15L3      : ONOH0        , AT = 5.467834     , SLOT_ID = 2459553, ASSEMBLY_ID = 2452597;
+ BR3.QSKH0.15L3      : QSKH0        , AT = 5.467834     , SLOT_ID = 2459554, ASSEMBLY_ID = 2452597;
+ BR3.XNOH0.15L3      : XNOH0        , AT = 5.467834     , SLOT_ID = 2459556, ASSEMBLY_ID = 2452597;
+ BR.QDE15                           , AT = 6.234797     , SLOT_ID = 2459561;
+ BE3.BSW15L4         : MDBAA        , AT = 7.001834     , SLOT_ID = 2459564;
+ BR.QFO152                          , AT = 7.580797     , SLOT_ID = 2459544;
+ BR.STSCRAP152                      , AT = 8.1998       , SLOT_ID = 2459566, ASSEMBLY_ID = 2459541;
+ BR.BHZ152                          , AT = 9.008652     , SLOT_ID = 2459541;
+ENDSEQUENCE;
+ 
+psb3_WithMarker: SEQUENCE, REFER = ENTRY, L  = 157.08; !Ring 3
+ P01TOPMID                  , AT = 0;
+ P02TOPMID                  , AT = 9.8175;
+ P03TOPMID                  , AT = 19.635;
+ P04TOPMID                  , AT = 29.4525;
+ P05TOPMID                  , AT = 39.27;
+ P06TOPMID                  , AT = 49.0875;
+ P07TOPMID                  , AT = 58.905;
+ P08TOPMID                  , AT = 68.7225;
+ P09TOPMID                  , AT = 78.54;
+ P10TOPMID                  , AT = 88.3575;
+ P11TOPMID                  , AT = 98.175;
+ P12TOPMID                  , AT = 107.9925;
+ P13TOPMID                  , AT = 117.81;
+ P14TOPMID                  , AT = 127.6275;
+ P15TOPMID_WithMarker       , AT = 137.445;
+ P16TOPMID                  , AT = 147.2625;
+ENDSEQUENCE;
+
+! re-activate the warning
+option, warn;
+
+
+/******************************************************************************************
+ * beam, use
+ ******************************************************************************************/
+beam, particle=PROTON, pc=2.14;  ! change depending on c-time of orbit measurement; pc=momentum
+use, sequence=psb3;
+!use, sequence=psb3_WithMarker;
+
+set,  format="20.10f";
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DHZ4L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ4L1=0.001 rad';
+
+
+! insert a kicker strength
+kBE3DHZ4L1 := 0.001; ! rad
+
+
+! Match for very old working point, according to note PS/OP/Note 99-xx
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+! MATCH,sequence=psb3_WithMarker;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+! assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DHZ4L1at1mrad.prt";
+! print, text="match_orbit for MUX=4.172, MUY=5.230";
+! value,  kKF;
+! value,  kKD;
+! assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,x,px; !alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss !, centre
+      , DELTAP = PSHIFT
+      , table=twiss
+      , file='../output/psb_orbit_BE3DHZ4L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=twiss, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit_BE3DHZ4L1at1mrad';
+
+
+
+
+XSEPT  := table(twiss,BE3.SMH15L1,x);
+PXSEPT := table(twiss,BE3.SMH15L1,px);
+! XSEPT  := table(twiss,BE3.SMH15L1_START,x);
+! PXSEPT := table(twiss,BE3.SMH15L1_START,px);
+
+
+! assign, echo="../output/geom_rel_atSMH15L1_duetoBE3DHZ4L1at1mrad";
+print, text="! Optics function at the center of extraction septum";
+value,  XSEPT;
+value,  PXSEPT;
+assign, echo=terminal;
+
+/******************************************************************************************
+ * 
+ *    S T O P !!!
+ *
+ ******************************************************************************************\
+
+STOP;
+
+

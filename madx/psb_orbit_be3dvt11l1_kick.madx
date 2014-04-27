@@ -1,0 +1,115 @@
+title, 'BOOSTER lattice @ 1.4 GeV';
+
+option, echo;
+option, RBARC=FALSE;
+
+
+
+/******************************************************************************************
+ * BOOSTER
+ ******************************************************************************************/
+! call, file = '../psb.ele';
+! call, file = '../psb.seq';
+! call, file = '../psb.dbx';
+! call, file = '../strength/psb_orbit.str';
+
+! use afs files
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.ele';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.seq';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/psb.dbx';
+call, file = '/afs/cern.ch/eng/ps/cps/Psb/2014/strength/psb_extraction.str';
+
+
+!save, sequence=psb3, file=psb3.save;
+
+
+
+/******************************************************************************************
+ * beam, use
+ ******************************************************************************************/
+beam, particle=PROTON, pc=2.14;  ! change depending on c-time of orbit measurement; pc=momentum
+use, sequence=psb3;
+
+set,  format="20.10f";
+
+
+/******************************************************************************************
+ * ACTIVATE KICKER BE3.DVT11L1, CORRECTION OF 1 mrad
+ ******************************************************************************************/
+title, 'BOOSTER lattice 1.4 GeV, kBE3DVT11L1=0.001 rad';
+
+
+! insert a kicker strength
+kBE3DVT11L1 := 0.001; ! rad
+
+
+! Match for very old working point, according to note PS/OP/Note 99-xx
+!------------------------------------------------------------------------------------------
+MATCH,sequence=psb3;
+ vary, NAME=kKF, step = 0.0001;
+ vary, NAME=kKD, step = 0.0001;
+ constraint, range=#E, MUX=4.172, MUY=5.230;
+ lmdif, calls = 10000, tolerance = 1.0E-21;
+ENDMATCH;
+
+
+! Print results on file: match_orbit.prt
+! -----------------------------------------------------------------------------------------
+! assign, echo="../output/match_orbit_MUX4p172_MUY5p230_BE3DVT11L1at1mrad.prt";
+! print, text="match_orbit for MUX=4.172, MUY=5.230";
+! value,  kKF;
+! value,  kKD;
+! assign, echo=terminal;
+
+
+! TWISS
+! -----------------------------------------------------------------------------------------
+ 
+PSHIFT=0;
+ 
+/************************************************************
+ * MAD uses pt as the 5th variable NOT delta-p.
+ * The result is that all derivatives are with repect to pt.
+ * This is the reason for the non-standard dispersion values
+ * for non-relativistic machines, like the PSB
+ ************************************************************/
+beta=sqrt(1-1/beam->gamma^2);
+disp:=beta*table(twiss,dx); ! Delta_x=Disp*Delta_p/p;
+ 
+select, flag=twiss, clear;
+select, flag=twiss, column=name, s,y,py; !alfx,alfy,betx,bety,mux,muy,disp;
+ 
+twiss , centre
+      , DELTAP = PSHIFT
+      , table=twiss
+      , file='../output/psb_orbit_BE3DVT11L1at1mrad.twiss';
+ 
+
+! PLOT
+! -----------------------------------------------------------------------------------------
+
+PLOT, table=twiss, VAXIS=Y,HAXIS=S, VMIN=-0.007,VMAX=0.007,
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/psb_orbit_BE3DVT11L1at1mrad';
+
+
+
+
+YSEPT  := table(twiss,BE3.SMH15L1,y);
+PYSEPT := table(twiss,BE3.SMH15L1,py);
+
+
+assign, echo="../output/geom_rel_atSMH15L1_duetoBE3DVT11L1at1mrad";
+print, text="! Optics function at the center of extraction septum";
+value,  YSEPT;
+value,  PYSEPT;
+assign, echo=terminal;
+
+/******************************************************************************************
+ * 
+ *    S T O P !!!
+ *
+ ******************************************************************************************\
+
+STOP;
+
+
