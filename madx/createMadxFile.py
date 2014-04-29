@@ -79,6 +79,9 @@ if ('2009' in var_to_change['SEQFILE']):
 if ('expfromnote' in var_to_change['SEQFILE']):
     ext2 = 'lexpfromnote' # layout as expected from PS/OP/Note 99-xx, never published...
 
+if ('geode' in var_to_change['SEQFILE']):
+    ext2 += 'geodeSMH15L1'
+    
 var_to_change['MATCH_ORBIT_FILENAME'] = outfolder + 'match_orbit_MUX4p172_MUY5p230_' +  ext + '_' + ext2 + '.prt'
 var_to_change['OUTPUT_TWISS'] = outfolder + 'twiss/psb_orbit_' +  ext + '_' + ext2 + '.twiss'
 var_to_change['OUTPUT_PLOT']  = outfolder +    'ps/psb_orbit_' +  ext + '_' + ext2 

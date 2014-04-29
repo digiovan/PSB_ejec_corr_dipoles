@@ -41,8 +41,8 @@
 @ SYNCH_5          %le          0.0000000000
 @ TITLE            %46s "BOOSTER lattice 1.4 GeV, kBE3DVT11L1=0.001 rad"
 @ ORIGIN           %22s "MAD-X 5.02.00 Linux 32"
-@ DATE             %08s "27/04/14"
-@ TIME             %08s "20.02.23"
+@ DATE             %08s "29/04/14"
+@ TIME             %08s "09.37.31"
 * NAME                                  S                    Y                   PY 
 $ %s                                  %le                  %le                  %le 
  "PSB3$START"                0.0000000000         0.0011911296         0.0004684580

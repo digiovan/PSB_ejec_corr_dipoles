@@ -34,3 +34,27 @@
  echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote.madx'
  madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote.madx
 
+ echo 'madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2014geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2014geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2014geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2014geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2014geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2014geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2009geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2009geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2009geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2009geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2009geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2009geodeSMH15L1.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2009geodeSMH15L1.madx'
+ madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2009geodeSMH15L1.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2009geodeSMH15L1.madx
+

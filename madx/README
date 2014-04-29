@@ -11,8 +11,20 @@ python createMadxFile.py -r 3 -f ../psb_2009.seq -k DHZ11L1 -v 0.001 >> CMD
 python createMadxFile.py -r 3 -f ../psb_2009.seq -k DVT4L1 -v 0.001  >> CMD
 python createMadxFile.py -r 3 -f ../psb_2009.seq -k DVT11L1 -v 0.001 >> CMD
 
+
 python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DHZ4L1 -v 0.001  >> CMD
 python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DHZ11L1 -v 0.001 >> CMD
 python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DVT4L1 -v 0.001  >> CMD
 python createMadxFile.py -r 3 -f ../psb_expfromnote.seq -k DVT11L1 -v 0.001 >> CMD
 
+
+python createMadxFile.py -r 3 -f ../psb_geodeSMH15L1.seq -k DHZ4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_geodeSMH15L1.seq -k DHZ11L1 -v 0.001 >> CMD
+python createMadxFile.py -r 3 -f ../psb_geodeSMH15L1.seq -k DVT4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_geodeSMH15L1.seq -k DVT11L1 -v 0.001 >> CMD
+
+
+python createMadxFile.py -r 3 -f ../psb_2009geodeSMH15L1.seq -k DHZ4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009geodeSMH15L1.seq -k DHZ11L1 -v 0.001 >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009geodeSMH15L1.seq -k DVT4L1 -v 0.001  >> CMD
+python createMadxFile.py -r 3 -f ../psb_2009geodeSMH15L1.seq -k DVT11L1 -v 0.001 >> CMD
