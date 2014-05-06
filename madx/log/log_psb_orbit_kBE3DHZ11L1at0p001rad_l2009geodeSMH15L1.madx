@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 29.04.14 09.37.35 +
+  + Execution Time Stamp: 05.05.14 18.20.14 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -6146,7 +6146,33 @@ BE3.SMH15L1 : HKICKER, L := 0, AT = BE3_SMH15L1_POS;
 
 seqedit,sequence=P15TOPMID;
 
-install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+
+! now accounting the fact that the blade is smaller than the tank size
+
+! and not even centered. Based on drawings from M. Houricane, PS.CA.9841.1
+
+! assuming the madx sequence contains the center position how much should I move down to reach the starting of the septum blade?
+
+! 
+
+! |-A--|--------B------|--C--|, A=distance tank-beginning blade, B= blade length, C=distance end blade-tank
+
+!       <- X ->|
+
+!              0 <- this is the center
+
+! 
+
+! A+X = B-X+C  <=> X = (B+C-A)/2
+
+!
+
+! A=0.12103, B=1.00024, C=138.21   => X=0.508706
+
+!
+
+install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.508706; ! length of the septum is 1.26 m
 
 flatten;
 
@@ -6219,10 +6245,10 @@ Initial Penalty Function =   0.10000243E+03
 call:       4   Penalty function =   0.60070142E+00
 call:       7   Penalty function =   0.65908620E-04
 call:      10   Penalty function =   0.59857241E-12
-call:      13   Penalty function =   0.26570949E-19
-call:      16   Penalty function =   0.00000000E+00
+call:      13   Penalty function =   0.26566899E-19
+call:      16   Penalty function =   0.78886091E-28
  ++++++++++ LMDIF ended: converged successfully
-call:      16   Penalty function =   0.00000000E+00
+call:      16   Penalty function =   0.78886091E-28
 ENDMATCH;
 
 
@@ -6231,10 +6257,10 @@ MATCH SUMMARY
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
 psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     0.00000000E+00
-psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     0.00000000E+00
+psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     7.88860905E-29
 
 
-Final Penalty Function =   0.00000000e+00
+Final Penalty Function =   7.88860905e-29
 
 
 
@@ -6247,7 +6273,7 @@ kkd                      -8.14658e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   0.00000000e+00
+VARIABLE "TAR" SET TO   7.88860905e-29
 
 
 
@@ -6331,7 +6357,7 @@ orbit:  -5.737570E-03  3.514145E-05  0.000000E+00  0.000000E+00  0.000000E+00  0
         4.1720000000        -3.8700395347         7.6676214187         2.0089823760 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6823465899         0.0065510957         0.0042355491         5.2300000000 
+        1.6823482255         0.0065510957         0.0042356108         5.2300000000 
 
                  dq2              betymax                dymax                dyrms 
       -10.1151069441        15.9609582443        -0.0000000000         0.0000000000 
@@ -6396,7 +6422,7 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  XSEPT_START;
 
-xsept_start =         0.0055772119 ;
+xsept_start =         0.0055890910 ;
 value,  PXSEPT_START;
 
 pxsept_start =         0.0000979363 ;

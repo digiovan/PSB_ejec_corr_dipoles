@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 29.04.14 09.37.29 +
+  + Execution Time Stamp: 05.05.14 18.20.06 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -6146,7 +6146,33 @@ BE3.SMH15L1 : HKICKER, L := 0, AT = BE3_SMH15L1_POS;
 
 seqedit,sequence=P15TOPMID;
 
-install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+
+! now accounting the fact that the blade is smaller than the tank size
+
+! and not even centered. Based on drawings from M. Houricane, PS.CA.9841.1
+
+! assuming the madx sequence contains the center position how much should I move down to reach the starting of the septum blade?
+
+! 
+
+! |-A--|--------B------|--C--|, A=distance tank-beginning blade, B= blade length, C=distance end blade-tank
+
+!       <- X ->|
+
+!              0 <- this is the center
+
+! 
+
+! A+X = B-X+C  <=> X = (B+C-A)/2
+
+!
+
+! A=0.12103, B=1.00024, C=138.21   => X=0.508706
+
+!
+
+install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.508706; ! length of the septum is 1.26 m
 
 flatten;
 
@@ -6218,7 +6244,7 @@ Initial Penalty Function =   0.10000243E+03
 
 call:       4   Penalty function =   0.60070141E+00
 call:       7   Penalty function =   0.65908624E-04
-call:      10   Penalty function =   0.59857165E-12
+call:      10   Penalty function =   0.59857164E-12
 call:      13   Penalty function =   0.26563840E-19
 call:      16   Penalty function =   0.12621774E-26
  ++++++++++ LMDIF ended: converged successfully
@@ -6331,7 +6357,7 @@ orbit:  -5.444730E-04 -9.225118E-04  0.000000E+00  0.000000E+00  0.000000E+00  0
         4.1720000000        -3.8700399412         7.6671478928         1.9989268233 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6784664100         0.0064664437         0.0041780884         5.2300000000 
+        1.6784574242         0.0064664437         0.0041780987         5.2300000000 
 
                  dq2              betymax                dymax                dyrms 
       -10.1151074169        15.9602255731        -0.0000000000         0.0000000000 
@@ -6396,7 +6422,7 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  XSEPT_START;
 
-xsept_start =         0.0000356132 ;
+xsept_start =         0.0001514867 ;
 value,  PXSEPT_START;
 
 pxsept_start =         0.0009553116 ;

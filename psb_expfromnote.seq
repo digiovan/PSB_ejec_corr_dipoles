@@ -1,9 +1,7 @@
  /**********************************************************************************
   *
   * PS Booster version STUDY in MAD X SEQUENCE format
-  * Original File Generated the 11-FEB-2014 11:16:24 from LHCLAYOUT@EDMSDB Database
-  * BUT MODIFIED ACCORDING TO THE PREVIOUS CHANGES DONE IN 2009 AND EXTRACTED BY
-  * BETTINA FROM THE LAYOUT DATABASE
+  * Generated the 11-FEB-2014 11:16:24 from LHCLAYOUT@EDMSDB Database
   *
   * It consists of 16 identical periods, apart from the equipment
   * in the straight sections.
@@ -121,10 +119,10 @@ P04BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 04
  BR1.OSK4L1          : OSK          , AT = .37          , SLOT_ID = 2458975, ASSEMBLY_ID = 2452431;
  BR1.XNO4L1          : XNO__001     , AT = .37          , SLOT_ID = 2458976, ASSEMBLY_ID = 2452431;
  BR1.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458977, ASSEMBLY_ID = 2452431;
- ! BE1.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! original
- ! BE1.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! original
- BE1.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
- BE1.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
+ ! BE1.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435;
+ ! BE1.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435;
+ BE1.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
+ BE1.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
  BR.STSCRAP41                       , AT = 4.2717       , SLOT_ID = 2459000, ASSEMBLY_ID = 2458998;
  BR.QFO41                           , AT = 4.889797     , SLOT_ID = 2459002;
@@ -265,10 +263,10 @@ P10BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 10
 ENDSEQUENCE;
 
 P11BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 11
- ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! original
- ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! original
- BE1.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
- BE1.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx
+ ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+ ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+ BE1.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
+ BE1.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
  BR1.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459331, ASSEMBLY_ID = 2452538;
  BR1.QNO11L1         : QNO__001     , AT = 1.463        , SLOT_ID = 2459332, ASSEMBLY_ID = 2452538;
  BR1.XNO11L1         : XNO__001     , AT = 1.463        , SLOT_ID = 2459333, ASSEMBLY_ID = 2452538;
@@ -352,8 +350,8 @@ ENDSEQUENCE;
 
 P15BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 15
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
- ! BE1.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459524, ASSEMBLY_ID = 2452588; ! original
- BE1.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
+ ! BE1.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459524, ASSEMBLY_ID = 2452588;
+ BE1.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459524, ASSEMBLY_ID = 2452588;  ! from PS/OP/Note 99-xx      
  BR1.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459528, ASSEMBLY_ID = 2452589;
  BR1.DVT15L1         : DVT__002     , AT = 1.8213       , SLOT_ID = 2459529, ASSEMBLY_ID = 2452589;
  BE1.BSW15L1         : MDBAB        , AT = 2.36666      , SLOT_ID = 2459536;
@@ -463,10 +461,10 @@ P04BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 04
  BR2.OSK4L1          : OSK          , AT = .37          , SLOT_ID = 2458979, ASSEMBLY_ID = 2452432;
  BR2.XNO4L1          : XNO__001     , AT = .37          , SLOT_ID = 2458980, ASSEMBLY_ID = 2452432;
  BR2.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458981, ASSEMBLY_ID = 2452432;
- ! BE2.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458992, ASSEMBLY_ID = 2452436; ! original
- ! BE2.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458993, ASSEMBLY_ID = 2452436; ! original
- BE2.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
- BE2.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
+ ! BE2.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458992, ASSEMBLY_ID = 2452436;
+ ! BE2.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458993, ASSEMBLY_ID = 2452436;
+ BE2.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458992, ASSEMBLY_ID = 2452436; ! from PS/OP/Note 99-xx
+ BE2.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458993, ASSEMBLY_ID = 2452436; ! from PS/OP/Note 99-xx
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
  BR.STSCRAP41                       , AT = 4.2717       , SLOT_ID = 2459000, ASSEMBLY_ID = 2458998;
  BR.QFO41                           , AT = 4.889797     , SLOT_ID = 2459002;
@@ -607,10 +605,10 @@ P10BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 10
 ENDSEQUENCE;
 
 P11BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 11
- ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535; ! original
- ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535; ! original
- BE2.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
- BE2.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx
+ ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+ ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+ BE2.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459325, ASSEMBLY_ID = 2452535; ! from PS/OP/Note 99-xx 
+ BE2.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459326, ASSEMBLY_ID = 2452535; ! from PS/OP/Note 99-xx 
  BR2.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459334, ASSEMBLY_ID = 2452539;
  BR2.QNO11L1         : QNO__001     , AT = 1.463        , SLOT_ID = 2459335, ASSEMBLY_ID = 2452539;
  BR2.XNO11L1         : XNO__001     , AT = 1.463        , SLOT_ID = 2459336, ASSEMBLY_ID = 2452539;
@@ -694,8 +692,8 @@ ENDSEQUENCE;
 
 P15BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 15
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
- ! BE2.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459525, ASSEMBLY_ID = 2452588; ! original
- BE2.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
+ ! BE2.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459525, ASSEMBLY_ID = 2452588;
+ BE2.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459525, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
  BR2.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459530, ASSEMBLY_ID = 2452590;
  BR2.DVT15L1         : DVT__002     , AT = 1.8213       , SLOT_ID = 2459531, ASSEMBLY_ID = 2452590;
  BE2.BSW15L1         : MDBAB        , AT = 2.36666      , SLOT_ID = 2459537;
@@ -806,10 +804,10 @@ P04TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 04
  BR3.OSK4L1          : OSK          , AT = .37          , SLOT_ID = 2458983, ASSEMBLY_ID = 2452433;
  BR3.XNO4L1          : XNO__001     , AT = .37          , SLOT_ID = 2458984, ASSEMBLY_ID = 2452433;
  BR3.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458985, ASSEMBLY_ID = 2452433;
- ! BE3.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458994, ASSEMBLY_ID = 2452437; ! original
- ! BE3.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458995, ASSEMBLY_ID = 2452437; ! original
- BE3.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
- BE3.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
+ ! BE3.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458994, ASSEMBLY_ID = 2452437;
+ ! BE3.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458995, ASSEMBLY_ID = 2452437;
+ BE3.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458994, ASSEMBLY_ID = 2452437; ! from PS/OP/Note 99-xx
+ BE3.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458995, ASSEMBLY_ID = 2452437; ! from PS/OP/Note 99-xx
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
  BR.STSCRAP41                       , AT = 4.2717       , SLOT_ID = 2459000, ASSEMBLY_ID = 2458998;
  BR.QFO41                           , AT = 4.889797     , SLOT_ID = 2459002;
@@ -950,10 +948,10 @@ P10TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 10
 ENDSEQUENCE;
 
 P11TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 11
- ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536; ! original
- ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536; ! original
- BE3.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
- BE3.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx
+ ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+ ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+ BE3.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459327, ASSEMBLY_ID = 2452536; ! from PS/OP/Note 99-xx 
+ BE3.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459328, ASSEMBLY_ID = 2452536; ! from PS/OP/Note 99-xx 
  BR3.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459337, ASSEMBLY_ID = 2452540;
  BR3.QNO11L1         : QNO__001     , AT = 1.463        , SLOT_ID = 2459338, ASSEMBLY_ID = 2452540;
  BR3.XNO11L1         : XNO__001     , AT = 1.463        , SLOT_ID = 2459339, ASSEMBLY_ID = 2452540;
@@ -1037,8 +1035,8 @@ ENDSEQUENCE;
 
 P15TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 15
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
- ! BE3.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459526, ASSEMBLY_ID = 2452588; ! original
- BE3.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
+ ! BE3.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459526, ASSEMBLY_ID = 2452588;
+ BE3.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459526, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
  BR3.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459532, ASSEMBLY_ID = 2452591;
  BR3.DVT15L1         : DVT__002     , AT = 1.8213       , SLOT_ID = 2459533, ASSEMBLY_ID = 2452591;
  BE3.BSW15L1         : MDBAB        , AT = 2.36666      , SLOT_ID = 2459538;
@@ -1148,10 +1146,10 @@ P04TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 04
  BR4.OSK4L1          : OSK          , AT = .37          , SLOT_ID = 2458987, ASSEMBLY_ID = 2452434;
  BR4.XNO4L1          : XNO__001     , AT = .37          , SLOT_ID = 2458988, ASSEMBLY_ID = 2452434;
  BR4.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458989, ASSEMBLY_ID = 2452434;
- ! BE4.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458996, ASSEMBLY_ID = 2452438; ! original
- ! BE4.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458997, ASSEMBLY_ID = 2452438; ! original
- BE4.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
- BE4.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
+ ! BE4.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458996, ASSEMBLY_ID = 2452438;
+ ! BE4.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458997, ASSEMBLY_ID = 2452438;
+ BE4.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458996, ASSEMBLY_ID = 2452438; ! from PS/OP/Note 99-xx
+ BE4.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458997, ASSEMBLY_ID = 2452438; ! from PS/OP/Note 99-xx
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
  BR.STSCRAP41                       , AT = 4.2717       , SLOT_ID = 2459000, ASSEMBLY_ID = 2458998;
  BR.QFO41                           , AT = 4.889797     , SLOT_ID = 2459002;
@@ -1292,10 +1290,10 @@ P10TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 10
 ENDSEQUENCE;
 
 P11TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 11
- ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537; ! original
- ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537; ! original
- BE4.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
- BE4.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx
+ ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+ ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+ BE4.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459329, ASSEMBLY_ID = 2452537; ! from PS/OP/Note 99-xx 
+ BE4.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459330, ASSEMBLY_ID = 2452537; ! from PS/OP/Note 99-xx 
  BR4.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459340, ASSEMBLY_ID = 2452541;
  BR4.QNO11L1         : QNO__001     , AT = 1.463        , SLOT_ID = 2459341, ASSEMBLY_ID = 2452541;
  BR4.XNO11L1         : XNO__001     , AT = 1.463        , SLOT_ID = 2459342, ASSEMBLY_ID = 2452541;
@@ -1379,8 +1377,8 @@ ENDSEQUENCE;
 
 P15TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 15
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
- ! BE4.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! original
- BE4.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
+ ! BE4.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459527, ASSEMBLY_ID = 2452588;
+ BE4.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
  BR4.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459534, ASSEMBLY_ID = 2452592;
  BR4.DVT15L1         : DVT__002     , AT = 1.8213       , SLOT_ID = 2459535, ASSEMBLY_ID = 2452592;
  BE4.BSW15L1         : MDBAB        , AT = 2.36666      , SLOT_ID = 2459539;

@@ -38,7 +38,20 @@ BERING.SMH15L1 : HKICKER, L := 0, AT = BERING_SMH15L1_POS;
 
 
 seqedit,sequence=P15TOPMID;
-install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! now accounting the fact that the blade is smaller than the tank size
+! and not even centered. Based on drawings from M. Houricane, PS.CA.9841.1
+! assuming the madx sequence contains the center position how much should I move down to reach the starting of the septum blade?
+! 
+! |-A--|--------B------|--C--|, A=distance tank-beginning blade, B= blade length, C=distance end blade-tank
+!       <- X ->|
+!              0 <- this is the center
+! 
+! A+X = B-X+C  <=> X = (B+C-A)/2
+!
+! A=0.12103, B=1.00024, C=138.21   => X=0.508706
+!
+install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.508706; ! length of the septum is 1.26 m
 flatten;
 endedit;
 

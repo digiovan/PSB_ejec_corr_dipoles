@@ -38,7 +38,9 @@ BERING.SMH15L1 : HKICKER, L := 0, AT = BERING_SMH15L1_POS;
 
 
 seqedit,sequence=P15TOPMID;
-install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+!install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! now accounting for shifted septum blade
+install, element = BERING.SMH15L1_START, class=MARKER, at=BERING_SMH15L1_POS-0.63+0.12103; ! length of the septum is 1.26 m
 flatten;
 endedit;
 

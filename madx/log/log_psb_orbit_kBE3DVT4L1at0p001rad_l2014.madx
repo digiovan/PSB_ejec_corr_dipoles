@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 29.04.14 09.37.28 +
+  + Execution Time Stamp: 05.05.14 18.20.04 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -6112,7 +6112,33 @@ BE3.SMH15L1 : HKICKER, L := 0, AT = BE3_SMH15L1_POS;
 
 seqedit,sequence=P15TOPMID;
 
-install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+! install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.63; ! length of the septum is 1.26 m
+
+! now accounting the fact that the blade is smaller than the tank size
+
+! and not even centered. Based on drawings from M. Houricane, PS.CA.9841.1
+
+! assuming the madx sequence contains the center position how much should I move down to reach the starting of the septum blade?
+
+! 
+
+! |-A--|--------B------|--C--|, A=distance tank-beginning blade, B= blade length, C=distance end blade-tank
+
+!       <- X ->|
+
+!              0 <- this is the center
+
+! 
+
+! A+X = B-X+C  <=> X = (B+C-A)/2
+
+!
+
+! A=0.12103, B=1.00024, C=138.21   => X=0.508706
+
+!
+
+install, element = BE3.SMH15L1_START, class=MARKER, at=BE3_SMH15L1_POS-0.508706; ! length of the septum is 1.26 m
 
 flatten;
 
@@ -6184,11 +6210,11 @@ Initial Penalty Function =   0.99999938E+02
 
 call:       4   Penalty function =   0.60060580E+00
 call:       7   Penalty function =   0.65886148E-04
-call:      10   Penalty function =   0.59856754E-12
-call:      13   Penalty function =   0.26587691E-19
-call:      16   Penalty function =   0.19721523E-26
+call:      10   Penalty function =   0.59856736E-12
+call:      13   Penalty function =   0.26579236E-19
+call:      16   Penalty function =   0.20510384E-26
  ++++++++++ LMDIF ended: converged successfully
-call:      16   Penalty function =   0.19721523E-26
+call:      16   Penalty function =   0.20510384E-26
 ENDMATCH;
 
 
@@ -6196,11 +6222,11 @@ MATCH SUMMARY
 
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
-psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     7.09974815E-28
-psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     1.26217745E-27
+psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     7.88860905E-29
+psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     1.97215226E-27
 
 
-Final Penalty Function =   1.97215226e-27
+Final Penalty Function =   2.05103835e-27
 
 
 
@@ -6213,7 +6239,7 @@ kkd                      -8.14655e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   1.97215226e-27
+VARIABLE "TAR" SET TO   2.05103835e-27
 
 
 
@@ -6297,13 +6323,13 @@ orbit:   1.015593E-07  9.399465E-09  2.148234E-03 -5.633737E-04  0.000000E+00  0
         4.1720000000        -3.8700163446         7.6641337577         1.8711159281 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6806315763         0.0000005541         0.0000002261         5.2300000000 
+        1.6806315475         0.0000005541         0.0000002261         5.2300000000 
 
                  dq2              betymax                dymax                dyrms 
-      -10.1149680731        15.9526365880         0.2216872563         0.1002054778 
+      -10.1149680731        15.9526365880         0.2216872563         0.1002094065 
 
               ycomax               ycorms               deltap              synch_1 
-        0.0050315288         0.0025052059         0.0000000000         0.0000000000 
+        0.0050315288         0.0025052419         0.0000000000         0.0000000000 
 
              synch_2              synch_3              synch_4              synch_5 
         0.0000000000         0.0000000000         0.0000000000         0.0000000000 
@@ -6362,7 +6388,7 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  YSEPT_START;
 
-ysept_start =        -0.0019860759 ;
+ysept_start =        -0.0019975382 ;
 value,  PYSEPT_START;
 
 pysept_start =        -0.0000945001 ;
