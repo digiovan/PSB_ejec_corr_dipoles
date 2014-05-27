@@ -1,3 +1,3 @@
-match_orbit for MUX=4.172, MUY=5.230
-kkf =         0.7620585887 ;
-kkd =        -0.8146581750 ;
+match_orbit for MUX=4.172, MUY=4.230
+kkf =         0.7285043339 ;
+kkd =        -0.7432355498 ;

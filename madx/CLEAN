@@ -3,4 +3,5 @@ clean
 rm ../output/*
 rm ../output/*/*
 rm log/*
+rm *madx
 

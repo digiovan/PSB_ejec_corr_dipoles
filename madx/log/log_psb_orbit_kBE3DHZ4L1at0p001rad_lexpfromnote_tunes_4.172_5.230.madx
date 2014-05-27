@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 05.05.14 18.20.07 +
+  + Execution Time Stamp: 27.05.14 10.39.11 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -489,7 +489,7 @@ DVT__00A  : VKICKER     , L := 0;         ! DVT Vertical Kicker Type A  (Multipo
 
 return;
 
-call, file = '../psb_2009.seq';
+call, file = '../psb_expfromnote.seq';
 
  /**********************************************************************************
 
@@ -497,11 +497,7 @@ call, file = '../psb_2009.seq';
 
   * PS Booster version STUDY in MAD X SEQUENCE format
 
-  * Original File Generated the 11-FEB-2014 11:16:24 from LHCLAYOUT@EDMSDB Database
-
-  * BUT MODIFIED ACCORDING TO THE PREVIOUS CHANGES DONE IN 2009 AND EXTRACTED BY
-
-  * BETTINA FROM THE LAYOUT DATABASE
+  * Generated the 11-FEB-2014 11:16:24 from LHCLAYOUT@EDMSDB Database
 
   *
 
@@ -737,13 +733,13 @@ P04BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 04
 
  BR1.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458977, ASSEMBLY_ID = 2452431;
 
- ! BE1.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! original
+ ! BE1.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435;
 
- ! BE1.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! original
+ ! BE1.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435;
 
- BE1.DHZ4L1          : DHZ__001     , AT = 1.4260       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE1.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
 
- BE1.DVT4L1          : DVT__001     , AT = 1.4260       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE1.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from PS/OP/Note 99-xx
 
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
 
@@ -1025,13 +1021,13 @@ ENDSEQUENCE;
 
 P11BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 11
 
- ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! original
+ ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
 
- ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! original
+ ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
 
- BE1.DHZ11L1         : DHZ__001     , AT = .333         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec) 
+ BE1.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
 
- BE1.DVT11L1         : DVT__001     , AT = .333         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec)
+ BE1.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from PS/OP/Note 99-xx 
 
  BR1.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459331, ASSEMBLY_ID = 2452538;
 
@@ -1199,7 +1195,9 @@ P15BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 15
 
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
 
- BE1.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459524, ASSEMBLY_ID = 2452588;
+ ! BE1.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459524, ASSEMBLY_ID = 2452588;
+
+ BE1.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459524, ASSEMBLY_ID = 2452588;  ! from PS/OP/Note 99-xx      
 
  BR1.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459528, ASSEMBLY_ID = 2452589;
 
@@ -1419,13 +1417,13 @@ P04BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 04
 
  BR2.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458981, ASSEMBLY_ID = 2452432;
 
- ! BE2.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458992, ASSEMBLY_ID = 2452436; ! original
+ ! BE2.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458992, ASSEMBLY_ID = 2452436;
 
- ! BE2.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458993, ASSEMBLY_ID = 2452436; ! original
+ ! BE2.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458993, ASSEMBLY_ID = 2452436;
 
- BE2.DHZ4L1          : DHZ__001     , AT = 1.4260       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE2.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458992, ASSEMBLY_ID = 2452436; ! from PS/OP/Note 99-xx
 
- BE2.DVT4L1          : DVT__001     , AT = 1.4260       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE2.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458993, ASSEMBLY_ID = 2452436; ! from PS/OP/Note 99-xx
 
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
 
@@ -1707,13 +1705,13 @@ ENDSEQUENCE;
 
 P11BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 11
 
- ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535; ! original
+ ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
 
- ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535; ! original
+ ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
 
- BE2.DHZ11L1         : DHZ__001     , AT = .333         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec) 
+ BE2.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459325, ASSEMBLY_ID = 2452535; ! from PS/OP/Note 99-xx 
 
- BE2.DVT11L1         : DVT__001     , AT = .333         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec)
+ BE2.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459326, ASSEMBLY_ID = 2452535; ! from PS/OP/Note 99-xx 
 
  BR2.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459334, ASSEMBLY_ID = 2452539;
 
@@ -1881,7 +1879,9 @@ P15BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 15
 
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
 
- BE2.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459525, ASSEMBLY_ID = 2452588;
+ ! BE2.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459525, ASSEMBLY_ID = 2452588;
+
+ BE2.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459525, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
 
  BR2.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459530, ASSEMBLY_ID = 2452590;
 
@@ -2103,13 +2103,13 @@ P04TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 04
 
  BR3.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458985, ASSEMBLY_ID = 2452433;
 
- ! BE3.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458994, ASSEMBLY_ID = 2452437; ! original
+ ! BE3.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458994, ASSEMBLY_ID = 2452437;
 
- ! BE3.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458995, ASSEMBLY_ID = 2452437; ! original
+ ! BE3.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458995, ASSEMBLY_ID = 2452437;
 
- BE3.DHZ4L1          : DHZ__001     , AT = 1.4260       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE3.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458994, ASSEMBLY_ID = 2452437; ! from PS/OP/Note 99-xx
 
- BE3.DVT4L1          : DVT__001     , AT = 1.4260       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE3.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458995, ASSEMBLY_ID = 2452437; ! from PS/OP/Note 99-xx
 
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
 
@@ -2391,13 +2391,13 @@ ENDSEQUENCE;
 
 P11TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 11
 
- ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536; ! original
+ ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
 
- ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536; ! original
+ ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
 
- BE3.DHZ11L1         : DHZ__001     , AT = .333         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec) 
+ BE3.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459327, ASSEMBLY_ID = 2452536; ! from PS/OP/Note 99-xx 
 
- BE3.DVT11L1         : DVT__001     , AT = .333         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec)
+ BE3.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459328, ASSEMBLY_ID = 2452536; ! from PS/OP/Note 99-xx 
 
  BR3.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459337, ASSEMBLY_ID = 2452540;
 
@@ -2565,7 +2565,9 @@ P15TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 15
 
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
 
- BE3.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459526, ASSEMBLY_ID = 2452588;
+ ! BE3.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459526, ASSEMBLY_ID = 2452588;
+
+ BE3.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459526, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
 
  BR3.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459532, ASSEMBLY_ID = 2452591;
 
@@ -2785,13 +2787,13 @@ P04TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 04
 
  BR4.XSK4L1          : XSK          , AT = .37          , SLOT_ID = 2458989, ASSEMBLY_ID = 2452434;
 
- ! BE4.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458996, ASSEMBLY_ID = 2452438; ! original
+ ! BE4.DHZ4L1          : DHZ__001     , AT = 1.3355       , SLOT_ID = 2458996, ASSEMBLY_ID = 2452438;
 
- ! BE4.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458997, ASSEMBLY_ID = 2452438; ! original
+ ! BE4.DVT4L1          : DVT__001     , AT = 1.3355       , SLOT_ID = 2458997, ASSEMBLY_ID = 2452438;
 
- BE4.DHZ4L1          : DHZ__001     , AT = 1.4260       , SLOT_ID = 2458990, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE4.DHZ4L1          : DHZ__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458996, ASSEMBLY_ID = 2452438; ! from PS/OP/Note 99-xx
 
- BE4.DVT4L1          : DVT__001     , AT = 1.4260       , SLOT_ID = 2458991, ASSEMBLY_ID = 2452435; ! from layout DB of 2009 (B. Mikulec)
+ BE4.DVT4L1          : DVT__001     , AT = 1.3269999985-0.426, SLOT_ID = 2458997, ASSEMBLY_ID = 2452438; ! from PS/OP/Note 99-xx
 
  BR.BHZ41                           , AT = 3.462849     , SLOT_ID = 2458998;
 
@@ -3073,13 +3075,13 @@ ENDSEQUENCE;
 
 P11TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 11
 
- ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537; ! original
+ ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
 
- ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537; ! original
+ ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
 
- BE4.DHZ11L1         : DHZ__001     , AT = .333         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec) 
+ BE4.DHZ11L1         : DHZ__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459329, ASSEMBLY_ID = 2452537; ! from PS/OP/Note 99-xx 
 
- BE4.DVT11L1         : DVT__001     , AT = .333         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534; ! from layout DB of 2009 (B. Mikulec)
+ BE4.DVT11L1         : DVT__001     , AT = 1.3269999985-0.950, SLOT_ID = 2459330, ASSEMBLY_ID = 2452537; ! from PS/OP/Note 99-xx 
 
  BR4.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459340, ASSEMBLY_ID = 2452541;
 
@@ -3247,7 +3249,9 @@ P15TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 15
 
  BR.BTV15L1                         , AT = .192         , SLOT_ID = 2459523;
 
- BE4.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459527, ASSEMBLY_ID = 2452588;
+ ! BE4.SMH15L1         : SMH__006     , AT = .909892      , SLOT_ID = 2459527, ASSEMBLY_ID = 2452588;
+
+ BE4.SMH15L1         : SMH__006     , AT = 1.3269999985-0.800+0.508706, SLOT_ID = 2459527, ASSEMBLY_ID = 2452588; ! from PS/OP/Note 99-xx
 
  BR4.DHZ15L1         : DHZ__002     , AT = 1.8213       , SLOT_ID = 2459534, ASSEMBLY_ID = 2452592;
 
@@ -5861,8 +5865,8 @@ br3.ono4l1:1      : at =        29.8225000000  flag =          0
 br3.osk4l1:1      : at =        29.8225000000  flag =          0
 br3.xno4l1:1      : at =        29.8225000000  flag =          0
 br3.xsk4l1:1      : at =        29.8225000000  flag =          0
-be3.dhz4l1:1      : at =        30.8785000000  flag =          1
-be3.dvt4l1:1      : at =        30.8785000000  flag =          1
+be3.dhz4l1:1      : at =        30.3534999985  flag =          1
+be3.dvt4l1:1      : at =        30.3534999985  flag =          1
 br.bhz41:1        : at =        32.9153490000  flag =          0
 br.stscrap41:1    : at =        33.7242000000  flag =          0
 br.qfo41:1        : at =        34.3422970000  flag =          0
@@ -5996,8 +6000,8 @@ br.stscrap102:1   : at =        96.5573000000  flag =          0
 br.bhz102:1       : at =        97.3661520000  flag =          0
 p10topmid$end:1   : at =        98.1750000000  flag =          0
 p11topmid$start:1 : at =        98.1750000000  flag =          0
-be3.dhz11l1:1     : at =        98.5080000000  flag =          1
-be3.dvt11l1:1     : at =        98.5080000000  flag =          1
+be3.dhz11l1:1     : at =        98.5519999985  flag =          1
+be3.dvt11l1:1     : at =        98.5519999985  flag =          1
 br3.ono11l1:1     : at =        99.6380000000  flag =          0
 br3.qno11l1:1     : at =        99.6380000000  flag =          0
 br3.xno11l1:1     : at =        99.6380000000  flag =          0
@@ -6077,7 +6081,7 @@ br.bhz142:1       : at =       136.6361520000  flag =          0
 p14topmid$end:1   : at =       137.4450000000  flag =          0
 p15topmid$start:1 : at =       137.4450000000  flag =          0
 br.btv15l1:1      : at =       137.6370000000  flag =          0
-be3.smh15l1:1     : at =       138.3548920000  flag =          1
+be3.smh15l1:1     : at =       138.4807059985  flag =          1
 br3.dhz15l1:1     : at =       139.2663000000  flag =          1
 br3.dvt15l1:1     : at =       139.2663000000  flag =          1
 be3.bsw15l1:1     : at =       139.8116600000  flag =          0
@@ -6131,10 +6135,10 @@ BE3_SMH15L1_POS = BE3.SMH15L1->at;
 
 value, BE3.SMH15L1->at;
 
-be3.smh15l1->at =         0.9098920000 ;
+be3.smh15l1->at =         1.0357059985 ;
 value, BE3_SMH15L1_POS;
 
-be3_smh15l1_pos =         0.9098920000 ;
+be3_smh15l1_pos =         1.0357059985 ;
  
 
 BE3.SMH15L1 : HKICKER, L := 0, AT = BE3_SMH15L1_POS;
@@ -6197,11 +6201,11 @@ use, sequence=psb3;
 
 /******************************************************************************************
 
- * ACTIVATE KICKER BE3.DHZ11L1, CORRECTION OF 0.001 rad
+ * ACTIVATE KICKER BE3.DHZ4L1, CORRECTION OF 0.001 rad
 
  ******************************************************************************************/
 
-title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ11L1=0.001 rad';
+title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ4L1=0.001 rad';
 
 
 
@@ -6209,7 +6213,7 @@ title, 'BOOSTER lattice 1.4 GeV, kBE3DHZ11L1=0.001 rad';
 
 ! insert a kicker strength
 
-kBE3DHZ11L1=0.001; ! rad
+kBE3DHZ4L1=0.001; ! rad
 
 
 
@@ -6242,13 +6246,13 @@ START LMDIF:
 Initial Penalty Function =   0.10000243E+03
 
 
-call:       4   Penalty function =   0.60070142E+00
-call:       7   Penalty function =   0.65908620E-04
-call:      10   Penalty function =   0.59857242E-12
-call:      13   Penalty function =   0.26580596E-19
-call:      16   Penalty function =   0.57586846E-26
+call:       4   Penalty function =   0.60070141E+00
+call:       7   Penalty function =   0.65908624E-04
+call:      10   Penalty function =   0.59857177E-12
+call:      13   Penalty function =   0.26551662E-19
+call:      16   Penalty function =   0.78886091E-27
  ++++++++++ LMDIF ended: converged successfully
-call:      16   Penalty function =   0.57586846E-26
+call:      16   Penalty function =   0.78886091E-27
 ENDMATCH;
 
 
@@ -6257,10 +6261,10 @@ MATCH SUMMARY
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
 psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     7.09974815E-28
-psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     5.04870979E-27
+psb3$end:1                 muy          4     5.23000000E+00     5.23000000E+00     7.88860905E-29
 
 
-Final Penalty Function =   5.75868461e-27
+Final Penalty Function =   7.88860905e-28
 
 
 
@@ -6273,7 +6277,7 @@ kkd                      -8.14658e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   5.75868461e-27
+VARIABLE "TAR" SET TO   7.88860905e-28
 
 
 
@@ -6282,7 +6286,7 @@ VARIABLE "TAR" SET TO   5.75868461e-27
 
 ! -----------------------------------------------------------------------------------------
 
-assign, echo="../output/match_orbit_MUX4p172_MUY5p230_kBE3DHZ11L1at0p001rad_l2009.prt";
+assign, echo="../output/match_orbit_MUX4p172_MUY5p230_kBE3DHZ4L1at0p001rad_lexpfromnote.prt";
 
 print, text="match_orbit for MUX=4.172, MUY=5.230";
 
@@ -6336,31 +6340,31 @@ twiss !, centre
 
       , table=twiss
 
-      , file='../output/twiss/psb_orbit_kBE3DHZ11L1at0p001rad_l2009.twiss';
+      , file='../output/twiss/psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote.twiss';
 
 enter Twiss module
 ++++++ info: Zero value of SIGT replaced by 1.
 ++++++ info: Zero value of SIGE replaced by 1/1000.
   
-iteration:   1 error:   2.060146E-03 deltap:   0.000000E+00
-orbit:  -5.738444E-03  3.507750E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+iteration:   1 error:   4.444032E-03 deltap:   0.000000E+00
+orbit:  -1.065629E-03 -8.931815E-04  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
   
-iteration:   2 error:   1.805516E-07 deltap:   0.000000E+00
-orbit:  -5.737570E-03  3.514145E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+iteration:   2 error:   6.619281E-07 deltap:   0.000000E+00
+orbit:  -1.064676E-03 -8.932470E-04  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
 
 ++++++ table: summ
 
               length               orbit5                 alfa              gammatr 
-      157.0800000000        -0.0000000000         0.0616172404         4.0285511121 
+      157.0800000000        -0.0000000000         0.0616169299         4.0285612605 
 
                   q1                  dq1              betxmax                dxmax 
-        4.1720000000        -3.8700395347         7.6676214187         2.0089823760 
+        4.1720000000        -3.8700397544         7.6673753095         2.0030210915 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6823448250         0.0065510957         0.0042354819         5.2300000000 
+        1.6783597039         0.0064784742         0.0041882498         5.2300000000 
 
                  dq2              betymax                dymax                dyrms 
-      -10.1151069441        15.9609582443        -0.0000000000         0.0000000000 
+      -10.1151071281        15.9605775115        -0.0000000000         0.0000000000 
 
               ycomax               ycorms               deltap              synch_1 
         0.0000000000         0.0000000000         0.0000000000         0.0000000000 
@@ -6379,7 +6383,7 @@ orbit:  -5.737570E-03  3.514145E-05  0.000000E+00  0.000000E+00  0.000000E+00  0
 
 PLOT, table=twiss, VAXIS=X,HAXIS=S, VMIN=-0.007,VMAX=0.007,
 
-      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/ps/psb_orbit_kBE3DHZ11L1at0p001rad_l2009';
+      SPLINE=FALSE, NOVERSION=TRUE, COLOUR=100, RANGE=#S/#E, FILE='../output/ps/psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote';
 
 ++++++ info: Zero value of SIGT replaced by 1.
 ++++++ info: Zero value of SIGE replaced by 1/1000.
@@ -6401,7 +6405,7 @@ PXSEPT_CENTER := table(twiss,BE3.SMH15L1,px);
 
 
 
-assign, echo="../output/geom/geom_rel_kBE3DHZ11L1at0p001rad_l2009.txt";
+assign, echo="../output/geom/geom_rel_kBE3DHZ4L1at0p001rad_lexpfromnote.txt";
 
 print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 
@@ -6422,16 +6426,16 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  XSEPT_START;
 
-xsept_start =         0.0055767507 ;
+xsept_start =         0.0007856744 ;
 value,  PXSEPT_START;
 
-pxsept_start =         0.0000979363 ;
+pxsept_start =         0.0009375094 ;
 value,  XSEPT_CENTER;
 
-xsept_center =         0.0056265715 ;
+xsept_center =         0.0012625911 ;
 value,  PXSEPT_CENTER;
 
-pxsept_center =         0.0000979363 ;
+pxsept_center =         0.0009375094 ;
 
 
 

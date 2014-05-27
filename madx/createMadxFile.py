@@ -41,6 +41,11 @@ parser.add_option('-v', '--kicker_value',
                   dest='KICKER_VALUE',
                   action='store')
 
+parser.add_option('-t', '--tunes',
+                  help='specify the tunes values separated by comma -t 4.17,4.23',
+                  dest='TUNES',
+                  action='store')
+
 
 # get the options
 (opts, args) = parser.parse_args()
@@ -54,6 +59,16 @@ for m in mandatories:
         parser.print_help()
         exit(-1)
 
+# default tunes
+tunes_h = '4.172'
+tunes_v = '5.230'
+
+if opts.__dict__['TUNES']:
+    new_tunes = opts.TUNES.split(",")
+    tunes_h = new_tunes[0]
+    tunes_v = new_tunes[1]
+
+# print "The Tunes are Qh=%s, Qv=%s" % (tunes_h, tunes_v)
 
 # standard variables
 outfolder = '../output/'
@@ -64,6 +79,8 @@ PWD = os.getcwd()
 
 var_to_change = {}
 
+var_to_change['TUNES_H'] = tunes_h
+var_to_change['TUNES_V'] = tunes_v
 var_to_change['RING'] = opts.RING
 var_to_change['PSBSEQ'] = 'psb' + var_to_change['RING']
 var_to_change['SEQFILE'] = opts.SEQFILE
@@ -81,7 +98,10 @@ if ('expfromnote' in var_to_change['SEQFILE']):
 
 if ('geode' in var_to_change['SEQFILE']):
     ext2 += 'geodeSMH15L1'
-    
+
+if ('tobias' in var_to_change['SEQFILE']):
+    ext2 += 'tobias'
+
 var_to_change['MATCH_ORBIT_FILENAME'] = outfolder + 'match_orbit_MUX4p172_MUY5p230_' +  ext + '_' + ext2 + '.prt'
 var_to_change['OUTPUT_TWISS'] = outfolder + 'twiss/psb_orbit_' +  ext + '_' + ext2 + '.twiss'
 var_to_change['OUTPUT_PLOT']  = outfolder +    'ps/psb_orbit_' +  ext + '_' + ext2 
@@ -96,14 +116,14 @@ var_to_change['OUTPUT_GEOM']  = outfolder +  'geom/geom_rel_'  +  ext + '_' + ex
 # modify the template script
 infile_name = ''
 if ('DHZ' in var_to_change['KICKER_NAME']):
-    infile_name = '%s/psb_orbit_DHZ_TEMPLATE.madx' % PWD
+    infile_name = '%s/templates/psb_orbit_DHZ_TEMPLATE.madx' % PWD
 if ('DVT' in var_to_change['KICKER_NAME']):
-    infile_name = '%s/psb_orbit_DVT_TEMPLATE.madx' % PWD
+    infile_name = '%s/templates/psb_orbit_DVT_TEMPLATE.madx' % PWD
 
 infile  = open('%s' % infile_name)
 
 
-madx_filename = 'psb_orbit_%s_%s.madx' % (ext, ext2) 
+madx_filename = 'psb_orbit_%s_%s_tunes_%s_%s.madx' % (ext, ext2, tunes_h, tunes_v) 
 outfile = open('%s/%s' % (PWD, madx_filename), 'w')
 
 
