@@ -1,5 +1,0 @@
-! Optics function at the center of extraction septum BE3.SMH15L1
-ysept_start =        -0.0019816265 ;
-pysept_start =        -0.0001189372 ;
-ysept_center =        -0.0020421305 ;
-pysept_center =        -0.0001189372 ;
