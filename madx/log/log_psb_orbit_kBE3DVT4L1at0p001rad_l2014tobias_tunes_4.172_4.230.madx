@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 27.05.14 10.39.17 +
+  + Execution Time Stamp: 28.05.14 15.36.27 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -1031,9 +1031,13 @@ ENDSEQUENCE;
 
 P11BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 11
 
- BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+ ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
 
- BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+ ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+
+ BE1.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+
+ BE1.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
 
  BR1.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459331, ASSEMBLY_ID = 2452538;
 
@@ -1719,9 +1723,13 @@ ENDSEQUENCE;
 
 P11BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 11
 
- BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+ ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
 
- BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+ ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+
+ BE2.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+
+ BE2.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
 
  BR2.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459334, ASSEMBLY_ID = 2452539;
 
@@ -2409,9 +2417,13 @@ ENDSEQUENCE;
 
 P11TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 11
 
- BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+ ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
 
- BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+ ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+
+ BE3.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+
+ BE3.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
 
  BR3.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459337, ASSEMBLY_ID = 2452540;
 
@@ -3097,9 +3109,13 @@ ENDSEQUENCE;
 
 P11TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 11
 
- BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+ ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
 
- BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+ ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+
+ BE4.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+
+ BE4.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
 
  BR4.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459340, ASSEMBLY_ID = 2452541;
 
@@ -6018,8 +6034,8 @@ br.stscrap102:1   : at =        96.5573000000  flag =          0
 br.bhz102:1       : at =        97.3661520000  flag =          0
 p10topmid$end:1   : at =        98.1750000000  flag =          0
 p11topmid$start:1 : at =        98.1750000000  flag =          0
-be3.dhz11l1:1     : at =        98.4710000000  flag =          1
-be3.dvt11l1:1     : at =        98.4710000000  flag =          1
+be3.dhz11l1:1     : at =        98.5430000000  flag =          1
+be3.dvt11l1:1     : at =        98.5430000000  flag =          1
 br3.ono11l1:1     : at =        99.6380000000  flag =          0
 br3.qno11l1:1     : at =        99.6380000000  flag =          0
 br3.xno11l1:1     : at =        99.6380000000  flag =          0
@@ -6264,10 +6280,10 @@ START LMDIF:
 Initial Penalty Function =   0.10292895E-10
 
 
-call:       4   Penalty function =   0.17179728E-20
-call:       7   Penalty function =   0.39443045E-27
+call:       4   Penalty function =   0.17163898E-20
+call:       7   Penalty function =   0.15777218E-27
  ++++++++++ LMDIF ended: converged successfully
-call:       7   Penalty function =   0.39443045E-27
+call:       7   Penalty function =   0.15777218E-27
 ENDMATCH;
 
 
@@ -6275,11 +6291,11 @@ MATCH SUMMARY
 
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
-psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     3.15544362E-28
+psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     7.88860905E-29
 psb3$end:1                 muy          4     4.23000000E+00     4.23000000E+00     7.88860905E-29
 
 
-Final Penalty Function =   3.94430453e-28
+Final Penalty Function =   1.57772181e-28
 
 
 
@@ -6292,7 +6308,7 @@ kkd                      -7.43232e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   3.94430453e-28
+VARIABLE "TAR" SET TO   1.57772181e-28
 
 
 
@@ -6376,13 +6392,13 @@ orbit:   8.024718E-08  1.101593E-07 -8.139930E-04 -6.477425E-04  0.000000E+00  0
         4.1720000000        -3.6631854063         7.6021288678         1.8525208383 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6702083194         0.0000011347         0.0000004140         4.2300000000 
+        1.6702082986         0.0000011347         0.0000004140         4.2300000000 
 
                  dq2              betymax                dymax                dyrms 
-       -7.3407238066        14.1667228634         0.1568756580         0.0912469393 
+       -7.3407238066        14.1667228634         0.1568756580         0.0912460629 
 
               ycomax               ycorms               deltap              synch_1 
-        0.0058680217         0.0031071353         0.0000000000         0.0000000000 
+        0.0058680217         0.0031070593         0.0000000000         0.0000000000 
 
              synch_2              synch_3              synch_4              synch_5 
         0.0000000000         0.0000000000         0.0000000000         0.0000000000 

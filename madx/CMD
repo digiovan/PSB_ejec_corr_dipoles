@@ -34,3 +34,39 @@
  echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx'
  madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx
 
+ echo 'madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx'
+ madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx'
+ madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx'
+ madx32 < psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx'
+ madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_5.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_lexpfromnote_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DHZ4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DHZ11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DHZ11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DVT4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT4L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx
+
+ echo 'madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx'
+ madx32 < psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx >& log/log_psb_orbit_kBE3DVT11L1at0p001rad_l2014tobias_tunes_4.172_4.230.madx
+

@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 27.05.14 10.39.17 +
+  + Execution Time Stamp: 28.05.14 15.36.26 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -1031,9 +1031,13 @@ ENDSEQUENCE;
 
 P11BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 11
 
- BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+ ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
 
- BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+ ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+
+ BE1.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+
+ BE1.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
 
  BR1.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459331, ASSEMBLY_ID = 2452538;
 
@@ -1719,9 +1723,13 @@ ENDSEQUENCE;
 
 P11BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 11
 
- BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+ ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
 
- BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+ ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+
+ BE2.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+
+ BE2.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
 
  BR2.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459334, ASSEMBLY_ID = 2452539;
 
@@ -2409,9 +2417,13 @@ ENDSEQUENCE;
 
 P11TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 11
 
- BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+ ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
 
- BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+ ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+
+ BE3.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+
+ BE3.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
 
  BR3.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459337, ASSEMBLY_ID = 2452540;
 
@@ -3097,9 +3109,13 @@ ENDSEQUENCE;
 
 P11TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 11
 
- BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+ ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
 
- BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+ ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+
+ BE4.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+
+ BE4.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
 
  BR4.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459340, ASSEMBLY_ID = 2452541;
 
@@ -6018,8 +6034,8 @@ br.stscrap102:1   : at =        96.5573000000  flag =          0
 br.bhz102:1       : at =        97.3661520000  flag =          0
 p10topmid$end:1   : at =        98.1750000000  flag =          0
 p11topmid$start:1 : at =        98.1750000000  flag =          0
-be3.dhz11l1:1     : at =        98.4710000000  flag =          1
-be3.dvt11l1:1     : at =        98.4710000000  flag =          1
+be3.dhz11l1:1     : at =        98.5430000000  flag =          1
+be3.dvt11l1:1     : at =        98.5430000000  flag =          1
 br3.ono11l1:1     : at =        99.6380000000  flag =          0
 br3.qno11l1:1     : at =        99.6380000000  flag =          0
 br3.xno11l1:1     : at =        99.6380000000  flag =          0
@@ -6261,13 +6277,13 @@ total constraints:      2
 
 START LMDIF:
 
-Initial Penalty Function =   0.11892739E-06
+Initial Penalty Function =   0.11892445E-06
 
 
-call:       4   Penalty function =   0.10091416E-14
-call:       7   Penalty function =   0.72714832E-23
+call:       4   Penalty function =   0.10091177E-14
+call:       7   Penalty function =   0.76678069E-23
  ++++++++++ LMDIF ended: converged successfully
-call:       7   Penalty function =   0.72714832E-23
+call:       7   Penalty function =   0.76678069E-23
 ENDMATCH;
 
 
@@ -6275,11 +6291,11 @@ MATCH SUMMARY
 
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
-psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     4.39363970E-24
-psb3$end:1                 muy          4     4.23000000E+00     4.23000000E+00     2.87784347E-24
+psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     4.54383881E-24
+psb3$end:1                 muy          4     4.23000000E+00     4.23000000E+00     3.12396807E-24
 
 
-Final Penalty Function =   7.27148317e-24
+Final Penalty Function =   7.66780688e-24
 
 
 
@@ -6292,7 +6308,7 @@ kkd                      -7.43236e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   7.27148317e-24
+VARIABLE "TAR" SET TO   7.66780688e-24
 
 
 
@@ -6361,25 +6377,25 @@ enter Twiss module
 ++++++ info: Zero value of SIGT replaced by 1.
 ++++++ info: Zero value of SIGE replaced by 1/1000.
   
-iteration:   1 error:   2.062524E-03 deltap:   0.000000E+00
-orbit:  -5.666034E-03  4.401001E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+iteration:   1 error:   1.989726E-03 deltap:   0.000000E+00
+orbit:  -5.640421E-03  3.180663E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
   
-iteration:   2 error:   1.789367E-07 deltap:   0.000000E+00
-orbit:  -5.665183E-03  4.407350E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
+iteration:   2 error:   1.811342E-07 deltap:   0.000000E+00
+orbit:  -5.639551E-03  3.186917E-05  0.000000E+00  0.000000E+00  0.000000E+00  0.000000E+00
 
 ++++++ table: summ
 
               length               orbit5                 alfa              gammatr 
-      157.0800000000        -0.0000000000         0.0609341564         4.0510686087 
+      157.0800000000        -0.0000000000         0.0609341065         4.0510702690 
 
                   q1                  dq1              betxmax                dxmax 
-        4.1720000000        -3.6632088454         7.6055989730         1.9814665077 
+        4.1720000000        -3.6632088750         7.6055633512         1.9807431677 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6716715775         0.0064816415         0.0042047580         4.2300000000 
+        1.6716121468         0.0064718431         0.0041956124         4.2300000000 
 
                  dq2              betymax                dymax                dyrms 
-       -7.3408259300        14.1734290113        -0.0000000000         0.0000000000 
+       -7.3408259303        14.1733936102        -0.0000000000         0.0000000000 
 
               ycomax               ycorms               deltap              synch_1 
         0.0000000000         0.0000000000         0.0000000000         0.0000000000 
@@ -6441,16 +6457,16 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  XSEPT_START;
 
-xsept_start =         0.0055194311 ;
+xsept_start =         0.0054913074 ;
 value,  PXSEPT_START;
 
-pxsept_start =         0.0000892530 ;
+pxsept_start =         0.0001011175 ;
 value,  XSEPT_CENTER;
 
-xsept_center =         0.0055648346 ;
+xsept_center =         0.0055427465 ;
 value,  PXSEPT_CENTER;
 
-pxsept_center =         0.0000892530 ;
+pxsept_center =         0.0001011175 ;
 
 
 

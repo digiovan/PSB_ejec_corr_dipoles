@@ -3,7 +3,7 @@
   +    MAD-X 5.02.00  (32 bit, Linux)       +
   +           Production Version            +
   + Code Modification Date: 2014.03.05      +
-  + Execution Time Stamp: 27.05.14 10.39.18 +
+  + Execution Time Stamp: 28.05.14 15.36.27 +
   +++++++++++++++++++++++++++++++++++++++++++
 title, 'BOOSTER lattice @ 1.4 GeV';
 
@@ -1031,9 +1031,13 @@ ENDSEQUENCE;
 
 P11BOT: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 1, Period 11
 
- BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+ ! BE1.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
 
- BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+ ! BE1.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
+
+ BE1.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459323, ASSEMBLY_ID = 2452534;
+
+ BE1.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459324, ASSEMBLY_ID = 2452534;
 
  BR1.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459331, ASSEMBLY_ID = 2452538;
 
@@ -1719,9 +1723,13 @@ ENDSEQUENCE;
 
 P11BOTMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 2, Period 11
 
- BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+ ! BE2.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
 
- BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+ ! BE2.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
+
+ BE2.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459325, ASSEMBLY_ID = 2452535;
+
+ BE2.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459326, ASSEMBLY_ID = 2452535;
 
  BR2.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459334, ASSEMBLY_ID = 2452539;
 
@@ -2409,9 +2417,13 @@ ENDSEQUENCE;
 
 P11TOPMID: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 3, Period 11
 
- BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+ ! BE3.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
 
- BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+ ! BE3.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
+
+ BE3.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459327, ASSEMBLY_ID = 2452536;
+
+ BE3.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459328, ASSEMBLY_ID = 2452536;
 
  BR3.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459337, ASSEMBLY_ID = 2452540;
 
@@ -3097,9 +3109,13 @@ ENDSEQUENCE;
 
 P11TOP: SEQUENCE, REFER = centre, L  = 9.8175; !Ring 4, Period 11
 
- BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+ ! BE4.DHZ11L1         : DHZ__001     , AT = .296         , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
 
- BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+ ! BE4.DVT11L1         : DVT__001     , AT = .296         , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
+
+ BE4.DHZ11L1         : DHZ__001     , AT = .296+0.072   , SLOT_ID = 2459329, ASSEMBLY_ID = 2452537;
+
+ BE4.DVT11L1         : DVT__001     , AT = .296+0.072   , SLOT_ID = 2459330, ASSEMBLY_ID = 2452537;
 
  BR4.ONO11L1         : ONO          , AT = 1.463        , SLOT_ID = 2459340, ASSEMBLY_ID = 2452541;
 
@@ -6018,8 +6034,8 @@ br.stscrap102:1   : at =        96.5573000000  flag =          0
 br.bhz102:1       : at =        97.3661520000  flag =          0
 p10topmid$end:1   : at =        98.1750000000  flag =          0
 p11topmid$start:1 : at =        98.1750000000  flag =          0
-be3.dhz11l1:1     : at =        98.4710000000  flag =          1
-be3.dvt11l1:1     : at =        98.4710000000  flag =          1
+be3.dhz11l1:1     : at =        98.5430000000  flag =          1
+be3.dvt11l1:1     : at =        98.5430000000  flag =          1
 br3.ono11l1:1     : at =        99.6380000000  flag =          0
 br3.qno11l1:1     : at =        99.6380000000  flag =          0
 br3.xno11l1:1     : at =        99.6380000000  flag =          0
@@ -6261,13 +6277,13 @@ total constraints:      2
 
 START LMDIF:
 
-Initial Penalty Function =   0.10562543E-10
+Initial Penalty Function =   0.10518737E-10
 
 
-call:       4   Penalty function =   0.16442431E-20
-call:       7   Penalty function =   0.10255192E-26
+call:       4   Penalty function =   0.16609122E-20
+call:       7   Penalty function =   0.41809628E-26
  ++++++++++ LMDIF ended: converged successfully
-call:       7   Penalty function =   0.10255192E-26
+call:       7   Penalty function =   0.41809628E-26
 ENDMATCH;
 
 
@@ -6276,10 +6292,10 @@ MATCH SUMMARY
 Node_Name                  Constraint   Type  Target Value       Final Value        Penalty
 --------------------------------------------------------------------------------------------------
 psb3$end:1                 mux          4     4.17200000E+00     4.17200000E+00     3.15544362E-28
-psb3$end:1                 muy          4     4.23000000E+00     4.23000000E+00     7.09974815E-28
+psb3$end:1                 muy          4     4.23000000E+00     4.23000000E+00     3.86541844E-27
 
 
-Final Penalty Function =   1.02551918e-27
+Final Penalty Function =   4.18096280e-27
 
 
 
@@ -6292,7 +6308,7 @@ kkd                      -7.43232e-01 -7.43232e-01 -1.00000e+20  1.00000e+20
 
 END MATCH SUMMARY
 
-VARIABLE "TAR" SET TO   1.02551918e-27
+VARIABLE "TAR" SET TO   4.18096280e-27
 
 
 
@@ -6361,28 +6377,28 @@ enter Twiss module
 ++++++ info: Zero value of SIGT replaced by 1.
 ++++++ info: Zero value of SIGE replaced by 1/1000.
   
-iteration:   1 error:   2.086170E-03 deltap:   0.000000E+00
-orbit:   7.708379E-07 -8.084737E-08 -3.333759E-03  4.590809E-05  0.000000E+00  0.000000E+00
+iteration:   1 error:   2.012803E-03 deltap:   0.000000E+00
+orbit:   7.790287E-07 -7.660454E-08 -3.307130E-03  3.319540E-05  0.000000E+00  0.000000E+00
   
-iteration:   2 error:   2.781119E-07 deltap:   0.000000E+00
-orbit:   7.944742E-07 -2.680218E-08 -3.333758E-03  4.590812E-05  0.000000E+00  0.000000E+00
+iteration:   2 error:   2.798696E-07 deltap:   0.000000E+00
+orbit:   7.898121E-07 -2.301209E-08 -3.307129E-03  3.319544E-05  0.000000E+00  0.000000E+00
 
 ++++++ table: summ
 
               length               orbit5                 alfa              gammatr 
-      157.0800000000        -0.0000000000         0.0609506764         4.0505195724 
+      157.0800000000        -0.0000000000         0.0609505736         4.0505229901 
 
                   q1                  dq1              betxmax                dxmax 
-        4.1720000000        -3.6631858418         7.6021287491         1.8525201416 
+        4.1720000000        -3.6631858003         7.6021287485         1.8525186983 
 
                dxrms               xcomax               xcorms                   q2 
-        1.6702062835         0.0000011597         0.0000004412         4.2300000000 
+        1.6702063596         0.0000011582         0.0000004386         4.2300000000 
 
                  dq2              betymax                dymax                dyrms 
-       -7.3407235314        14.1667232750         0.1767943680         0.0931744916 
+       -7.3407235507        14.1667231949         0.1744586235         0.0928649434 
 
               ycomax               ycorms               deltap              synch_1 
-        0.0060112630         0.0031867398         0.0000000000         0.0000000000 
+        0.0059855615         0.0031749370         0.0000000000         0.0000000000 
 
              synch_2              synch_3              synch_4              synch_5 
         0.0000000000         0.0000000000         0.0000000000         0.0000000000 
@@ -6441,16 +6457,16 @@ print, text="! Optics function at the center of extraction septum BE3.SMH15L1";
 ! Optics function at the center of extraction septum BE3.SMH15L1
 value,  YSEPT_START;
 
-ysept_start =         0.0031795148 ;
+ysept_start =         0.0031506854 ;
 value,  PYSEPT_START;
 
-pysept_start =         0.0000944286 ;
+pysept_start =         0.0001065173 ;
 value,  YSEPT_CENTER;
 
-ysept_center =         0.0032275512 ;
+ysept_center =         0.0032048714 ;
 value,  PYSEPT_CENTER;
 
-pysept_center =         0.0000944286 ;
+pysept_center =         0.0001065173 ;
 
 
 
